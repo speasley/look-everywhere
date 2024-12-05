@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look everywhere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .poem {
+            background: #fff;
+            font-family: "Meow Script", cursive;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 400;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .input-container {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: maroon;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="poem">
+        <p>I build my knowledge, piece by piece.<br>
+        In the quiet of the night, I dream and release.<br>
+        My hopes, my goals, they all align,<br>
+        To make success completely mine.<br>
+        My journey's path may twist and turn,<br>
+        Through every challenge, I will learn.<br>
+        For I am self-made, my fate my call,<br>
+        I stand west of Heritage Hall.<br>
+        From dreams to triumph, I stand tall.<br>
+        In my heart, my efforts call.<br>
+        Knowledge and wisdom, my truest hall.<br>
+        Every step I take, I heed the hall.<br>
+        Heritage stands. I am self-made.<br>
+        Who made me?</p>
+    </section>
+
+    <section class="input-container">
+        <input type="text" id="answer" placeholder="Who made me?">
+        <button id="submitBtn">Go</button>
+    </section>
+
+    <script>
+        const encodedAnswer = "UGF1bCBTbGlwcGVy";
+        const encodedRedirectURL = "aHR0cHM6Ly9zcGVhc2xleS5naXRodWIuaW8vZXZlcnl0aGluZy1pcy1hLWNsdWU=";
+
+        document.getElementById("submitBtn").addEventListener("click", () => {
+            const userInput = document.getElementById("answer").value.trim();
+            const correctAnswer = atob(encodedAnswer);
+
+            if (userInput === correctAnswer) {
+                const redirectURL = atob(encodedRedirectURL);
+                window.location.href = redirectURL;
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        });
+    </script>
+</body>
+</html>
